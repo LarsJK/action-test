@@ -1,0 +1,27 @@
+name: Test Action
+
+on:
+
+  push:
+    branches:
+      - main
+
+  workflow_dispatch:
+    inputs:
+      environment:
+        required: true
+        type: choice
+        default: staging
+        options:
+          - staging
+          - production
+
+jobs:
+  test-job:
+    runs-on: ubuntu-latest
+
+    env:
+      bucket: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production' && 'static' || 'static-staging' }}
+    steps:
+      - name: Echo bucket name
+        run: echo ${{ env.bucket }}
