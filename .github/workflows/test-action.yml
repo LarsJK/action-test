@@ -19,7 +19,7 @@ on:
 jobs:
   test-job:
     runs-on: ubuntu-latest
-    environment: app-${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'staging }}
+    environment: app-${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'staging' }}
 
     env:
       bucket: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production' && 'static' || 'static-staging' }}
