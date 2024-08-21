@@ -17,7 +17,7 @@ on:
           - production
 
 jobs:
-  test-job:
+  deployment:
     runs-on: ubuntu-latest
     environment: app-${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'staging' }}
 
