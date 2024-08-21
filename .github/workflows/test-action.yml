@@ -30,4 +30,9 @@ jobs:
 
       - name: Echo group
         run: echo ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production' && format('{0}-{1}', github.workflow, 'production') || format('{0}-{1}', github.workflow, github.ref) }}
-      
+
+      - name: Set year
+        run: echo "year=$(date +'%Y'" >> "$GITHUB_ENV"
+
+      - name: Echo year
+        run: echo $year
