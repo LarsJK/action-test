@@ -27,3 +27,7 @@ jobs:
     steps:
       - name: Echo bucket name
         run: echo ${{ env.bucket }}
+
+      - name: Echo group
+        run: echo ${{ github.workflow }}-${{ github.ref }}
+      
