@@ -39,8 +39,3 @@ jobs:
 
       - name: Echo year
         run: echo $year
-
-      - name: Run shared
-        uses: ./.github/workflows/shared.yml
-        with:
-          app: sas
