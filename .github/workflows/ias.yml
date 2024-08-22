@@ -23,4 +23,4 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: echo input
-        run: echo ${{ github.inputs.app }}
+        run: echo ${{ github.event.inputs.app }}
