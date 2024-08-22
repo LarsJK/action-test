@@ -2,10 +2,15 @@ name: "Shared workflow"
 
 on:
   workflow_call:
+    inputs:
+      app:
+        type: string
+        required: true
+        default: elev
 
 jobs:
   test-job:
     runs-on: ubuntu-latest
     steps:
       - name: echo input
-        run: echo input
+        run: echo ${{ github.inputs.app }}
