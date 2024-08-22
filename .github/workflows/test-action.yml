@@ -42,3 +42,5 @@ jobs:
   reuse:
     needs: [test-job]
     uses: ./.github/workflows/ias.yml
+    with:
+      app: sas
