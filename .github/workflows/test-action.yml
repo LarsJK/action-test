@@ -39,3 +39,6 @@ jobs:
 
       - name: Echo year
         run: echo $year
+  reuse:
+    needs: [test-job]
+    uses: ./.github/workflows/ias.yml
