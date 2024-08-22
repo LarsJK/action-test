@@ -7,6 +7,16 @@ on:
         type: string
         required: true
         default: elev
+  workflow_dispatch:
+    inputs:
+      app:
+        type: choice
+        default: elev
+        required: true
+        options:
+        - elev
+        - sas
+    
 
 jobs:
   test-job:
