@@ -28,7 +28,7 @@ jobs:
       - name: Check existence
         id: exists
         run: |
-          status_code=$(curl -o /dev/null -s -w "%{http_code}\n" -I https://static-test.asku.no/bbc81f1215534fa92c696d3fa7a47beef59c5330.manifest.json)
+          status_code=$(curl -o /dev/null -s -w "%{http_code}\n" -I https://static-test.asku.no/bbc81f1215534fa92c696d3fa7a47beef59c5331.manifest.json)
           echo "Status code: $status_code"
           if [ "$status_code" -eq 200 ]; then
             echo "exists=true" >> $GITHUB_OUTPUT
