@@ -42,7 +42,7 @@ jobs:
 
       - name: Skip if file exists
         if: steps.exists.outputs.exists == 'true'  # Using the id to reference the previous step's output
-        run: echo "File exists, skipping the next step.
+        run: echo "File exists, skipping the next step."
     
       - name: Checkout
         uses: actions/checkout@v4
