@@ -37,11 +37,11 @@ jobs:
           fi
 
       - name: Run next step only if file does not exist
-        if: steps.check_file.outputs.exists == 'false'  # Using the id to reference the previous step's output
+        if: steps.exists.outputs.exists == 'false'  # Using the id to reference the previous step's output
         run: echo "File does not exist, running the next step."
 
       - name: Skip if file exists
-        if: steps.check_file.outputs.exists == 'true'  # Using the id to reference the previous step's output
+        if: steps.exists.outputs.exists == 'true'  # Using the id to reference the previous step's output
         run: echo "File exists, skipping the next step.
     
       - name: Checkout
