@@ -23,8 +23,12 @@ jobs:
 
     env:
       bucket: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production' && 'static' || 'static-staging' }}
-      
+      environment: ${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment || 'staging' }}
+
     steps:
+      - name: Echo env
+        run: echo $environment
+        
       - name: Check existence
         id: exists
         run: |
