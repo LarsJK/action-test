@@ -27,6 +27,9 @@ jobs:
       namespace: cust-asku-${{ github.event_name == 'workflow_dispatch' && github.event.inputs.environment == 'production' && 'prod' || 'dev' }}
   
     steps:
+      - name: Echo namespace
+        run: echo $namespace
+        
       - name: Echo env
         run: echo $environment
         
