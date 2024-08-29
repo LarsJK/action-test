@@ -29,7 +29,7 @@ jobs:
     steps:
       - name: Echo namespace
         env:
-          OPENSHIFT_NAMESPACE: $namespace
+          OPENSHIFT_NAMESPACE: ${{ env.namespace }}
         run: echo $OPENSHIFT_NAMESPACE
         
       - name: Echo env
