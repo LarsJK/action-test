@@ -28,7 +28,9 @@ jobs:
   
     steps:
       - name: Echo namespace
-        run: echo $namespace
+        env:
+          OPENSHIFT_NAMESPACE: $namespace
+        run: echo $OPENSHIFT_NAMESPACE
         
       - name: Echo env
         run: echo $environment
